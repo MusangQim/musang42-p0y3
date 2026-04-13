@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 import sys
 
-scores = []
 user_input = len(sys.argv)
-list_input = str(sys.argv) - 1
 print("=== Player Score Analytics ===")
-print(f"Score processed: {list_input}")
-
+scores = []
+for arg in sys.argv[1:]:
+    try:
+        score = int(arg)
+        scores.append(score)
+        print(f"Scores processed: {scores}")
+    except ValueError as e:
+        print(f"Invalid parameter: {e}")
+        exit
+#print(f"Scores processed: {scores}")
 if user_input > 1:
     total_player = user_input - 1
     print(f"Total players: {total_player}")
