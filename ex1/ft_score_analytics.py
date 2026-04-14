@@ -22,5 +22,6 @@ def score_analytics() -> None:
     else:
         print("No score provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
 
+
 if __name__ == "__main__": 
     score_analytics()
