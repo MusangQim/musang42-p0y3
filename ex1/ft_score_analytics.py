@@ -18,7 +18,13 @@ def score_analytics() -> None:
         total_score = sum(scores)
         print(f"Total score: {total_score}")
         average_score = (total_score / total_player)
-        print(f"Average score: {average_score:.2f}")
+        print(f"Average score: {average_score:.1f}")
+        high_score = max(scores)
+        print(f"High score: {high_score}")
+        low_score = min(scores)
+        print(f"Low score: {low_score}")
+        score_range = high_score - low_score
+        print(f"Score range: {score_range}")
     else:
         print("No score provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
 
