@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 import sys
 
-user_input = len(sys.argv)
-print("=== Player Score Analytics ===")
-scores = []
-for arg in sys.argv[1:]:
-    try:
-        score = int(arg)
-        scores.append(score)
-    except ValueError as e:
-        print(f"Invalid parameter: {e}")
-if scores:
-    print(f"Scores processed: {scores}")
-else:
-    print("No score provided.")
-if user_input > 1:
-    total_player = user_input - 1
-    print(f"Total players: {total_player}")
-else:
-    print("No score provided.")
+def score_analytics() -> None:
+    user_input = len(sys.argv)
+    print("=== Player Score Analytics ===")
+    scores = []
+    for arg in sys.argv[1:]:
+        try:
+            score = int(arg)
+            scores.append(score)
+        except:
+            print(f"Invalid parameter: '{arg}'")
+    if user_input > 1 and scores:
+        print(f"Scores processed: {scores}")
+        total_player = len(scores)
+        print(f"Total players: {total_player}")
+        total_score = sum(scores)
+        print(f"Total score: {total_score}")
+        average_score = (total_score / total_player)
+        print(f"Average score: {average_score:.2f}")
+    else:
+        print("No score provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+
+if __name__ == "__main__": 
+    score_analytics()
