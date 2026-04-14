@@ -27,7 +27,7 @@ def score_analytics() -> None:
         score_range = high_score - low_score
         print(f"Score range: {score_range}")
     else:
-        print("No score provided. Usage: ",
+        print("No scores provided. Usage:",
               "python3 ft_score_analytics.py <score1> <score2> ...")
 
 
