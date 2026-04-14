@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
+
 def score_analytics() -> None:
     user_input = len(sys.argv)
     print("=== Player Score Analytics ===")
@@ -9,7 +10,7 @@ def score_analytics() -> None:
         try:
             score = int(arg)
             scores.append(score)
-        except:
+        except ValueError:
             print(f"Invalid parameter: '{arg}'")
     if user_input > 1 and scores:
         print(f"Scores processed: {scores}")
@@ -26,8 +27,9 @@ def score_analytics() -> None:
         score_range = high_score - low_score
         print(f"Score range: {score_range}")
     else:
-        print("No score provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+        print("No score provided. Usage: ",
+              "python3 ft_score_analytics.py <score1> <score2> ...")
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     score_analytics()
