@@ -10,13 +10,23 @@ def get_player_pos() -> tuple:
         if len(coords_split) != 3:
             print("Invalid syntax")
         else:
+            # for part in coords_split:
             try:
                 x = float(coords_split[0])
-                y = float(coords_split[1])
-                z = float(coords_split[2])
-                return (x, y, z)
             except ValueError as e:
-                print(f"Error on parameter '{e}'")
+                print(f"Error on parameter '{coords_split[0]}': {e}")
+                continue
+            try:
+                y = float(coords_split[1])
+            except ValueError as e:
+                print(f"Error on parameter '{coords_split[1]}': {e}")
+                continue
+            try:
+                z = float(coords_split[2])
+            except ValueError as e:
+                print(f"Error on parameter '{coords_split[2]}': {e}")
+                continue
+            return (x, y, z)
 
 
 def main() -> None:
@@ -30,6 +40,7 @@ def main() -> None:
     z1 = pos1[2]
     distance_formula = math.sqrt(x1**2 + y1**2 + z1**2)
     print(f"Distance to center: {round(distance_formula, 4)}")
+    print()
     print("Get a second set of coordinates")
     pos2 = get_player_pos()
     # print(f"Got a second tuple: {pos2}")
