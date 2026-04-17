@@ -10,7 +10,6 @@ def get_player_pos() -> tuple:
         if len(coords_split) != 3:
             print("Invalid syntax")
         else:
-            # for part in coords_split:
             try:
                 x = float(coords_split[0])
             except ValueError as e:
@@ -43,8 +42,6 @@ def main() -> None:
     print()
     print("Get a second set of coordinates")
     pos2 = get_player_pos()
-    # print(f"Got a second tuple: {pos2}")
-    # print(f"It includes: X={pos2[0]}, Y={pos2[1]}, Z={pos2[2]}")
     x2 = pos2[0]
     y2 = pos2[1]
     z2 = pos2[2]
