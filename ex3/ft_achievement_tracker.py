@@ -2,7 +2,7 @@
 import random
 
 achievements = [
-    "Crafting Genuis",
+    "Crafting Genius",
     "Strategist",
     "World Savior",
     "Speed Runner",
@@ -50,7 +50,16 @@ def main() -> None:
     print(f"Only Alice has: {alice_diff}")
     print(f"Only Bob has: {bob_diff}")
     print(f"Only Charlie has: {charlie_diff}")
-    print(f"Only Dylan has: {dylan_diff}")
+    print(f"Only Dylan has: {dylan_diff}\n")
+    # --- Set Missing ---
+    alice_miss = player_union.difference(alice)
+    bob_miss = player_union.difference(bob)
+    charlie_miss = player_union.difference(charlie)
+    dylan_miss = player_union.difference(dylan)
+    print(f"Alice is missing: {alice_miss}")
+    print(f"Bob is missing: {bob_miss}")
+    print(f"Charlie is missing: {charlie_miss}")
+    print(f"Dylan is missing: {dylan_miss}")
 
 
 if __name__ == "__main__":
