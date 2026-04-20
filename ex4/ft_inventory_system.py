@@ -2,25 +2,23 @@
 import sys
 
 inventory = {}
-#    "sword" : 1,
-#   "shield" : 2,
-#    "armor" : 3,
-#    "helmet" : 1,
-#    "potion" : 1
+
 
 def main():
     for arg in sys.argv[1:]:
         input_user = arg.split(':')
         if len(input_user) != 2:
-            print("Invalid parameter")
+            print(f"Error - invalid parameter '{arg}'")
             continue
-        else:
-            print("Redundant item")
-            skip
+        if input_user[0] in inventory:
+            print(f"Redundant item '{input_user[0]}' - discarding")
+            continue
         try:
             convert = int(input_user[1])
-        except ValueError:
-            print(f"Quantity Error for '{arg}:")
+            inventory[input_user[0]] = convert
+        except ValueError as e:
+            print(f"Quantity error for '{input_user[0]}': {e}")
+
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
