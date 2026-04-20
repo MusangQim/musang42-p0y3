@@ -18,7 +18,13 @@ def main():
             inventory[input_user[0]] = convert
         except ValueError as e:
             print(f"Quantity error for '{input_user[0]}': {e}")
-
+    check_keys = inventory.keys()
+    print(f"Got inventory: {inventory}")
+    print(f"Item list: {list(check_keys)}")
+    total = sum(inventory.values())
+    print(f"Total quantity of the {len(check_keys)} items: {total}")
+    for key, value in inventory.items():
+        print(key, value)
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
