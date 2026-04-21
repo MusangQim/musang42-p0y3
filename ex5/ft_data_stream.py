@@ -14,7 +14,7 @@ def gen_event():
         yield (random_player, random_action)
 
 
-# def consume_event() -> None:
+def consume_event() -> None:
 
 
 def main():
@@ -23,6 +23,10 @@ def main():
         event = next(event_gen)
         name, action = event
         print(f"Event {i}: Player {name} did action {action}")
+    event_list = []
+    for i in range(10):
+        event_list.append(next(event_gen))
+        print(f"Built list of 10 events: {event_list}")
 
 
 if __name__ == "__main__":
