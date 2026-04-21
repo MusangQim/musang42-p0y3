@@ -4,7 +4,7 @@ import sys
 inventory = {}
 
 
-def main():
+def main() -> None:
     for arg in sys.argv[1:]:
         input_user = arg.split(':')
         if len(input_user) != 2:
@@ -18,13 +18,26 @@ def main():
             inventory[input_user[0]] = convert
         except ValueError as e:
             print(f"Quantity error for '{input_user[0]}': {e}")
+    # --- using dict.keys() ---
     check_keys = inventory.keys()
     print(f"Got inventory: {inventory}")
     print(f"Item list: {list(check_keys)}")
-    total = sum(inventory.values())
+    # --- using dict.values() ---
+    check_value = inventory.values()
+    total = sum(check_value)
     print(f"Total quantity of the {len(check_keys)} items: {total}")
     for key, value in inventory.items():
-        print(key, value)
+        percentage = round((value / total) * 100, 1)
+        print(f"Item {key} represents {percentage}%")
+    # --- abundant part ---
+    most = max(inventory, key=inventory.get)
+    print(f"Item most abundant: {most} with quantity {max(check_value)}")
+    least = min(inventory, key=inventory.get)
+    print(f"Item least abundant: {least} with quantity {min(check_value)}")
+    # --- using dict.update() ---
+    inventory.update({"magic_item": 1})
+    print(f"Updated inventory: {inventory}")
+
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
