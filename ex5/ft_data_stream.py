@@ -7,7 +7,7 @@ players = ["alice", "bob", "charlie", "dylan"]
 actions = ["run", "eat", "sleep", "grab", "swim", "move"]
 
 
-def gen_event():
+def gen_event() -> typing.Generator:
     while True:
         random_player = random.choice(players)
         random_action = random.choice(actions)
@@ -22,7 +22,7 @@ def consume_event(event_list: list) -> typing.Generator:
         yield random_event
 
 
-def main():
+def main() -> None:
     event_gen = gen_event()
     for i in range(1000):
         event = next(event_gen)
