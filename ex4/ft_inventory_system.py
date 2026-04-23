@@ -5,6 +5,7 @@ inventory = {}
 
 
 def main() -> None:
+    print("=== Inventory System Analysis ===")
     for arg in sys.argv[1:]:
         input_user = arg.split(':')
         if len(input_user) != 2:
@@ -42,5 +43,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Inventory System Analysis ===")
     main()
