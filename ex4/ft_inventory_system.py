@@ -31,8 +31,10 @@ def main() -> None:
         percentage = round((value / total) * 100, 1)
         print(f"Item {key} represents {percentage}%")
     # --- abundant part ---
+    # <can be use if no '-> None'> most = max(inventory, key=inventory.get)
     most = max(inventory, key=lambda k: inventory[k])
     print(f"Item most abundant: {most} with quantity {max(check_value)}")
+    # <can be use if no '-> None'> least = min(inventory, key=inventory.get)
     least = min(inventory, key=lambda k: inventory[k])
     print(f"Item least abundant: {least} with quantity {min(check_value)}")
     # --- using dict.update() ---
