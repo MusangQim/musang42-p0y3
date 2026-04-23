@@ -20,11 +20,11 @@ def main() -> None:
     # --- using Dictionary Comprehensive ---
     scores = {name: random.randint(1, 1000) for name in all_capital}
     print(f"Score dict: {scores}")
-    average = sum(scores.values()) / len(scores)
-    print(f"Score average is {average:.2f}")
-    high = {name: score for name, score in scores.items()
-            if score > average}
-    print(f"High scores: {high}")
+    score_average = sum(scores.values()) / len(scores)
+    print(f"Score average is {score_average:.2f}")
+    score_high = {name: score for name, score in scores.items()
+                  if score > score_average}
+    print(f"High scores: {score_high}")
 
 
 if __name__ == "__main__":
