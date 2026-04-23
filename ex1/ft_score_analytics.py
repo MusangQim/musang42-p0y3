@@ -2,7 +2,7 @@
 import sys
 
 
-def score_analytics() -> None:
+def main() -> None:
     user_input = len(sys.argv)
     print("=== Player Score Analytics ===")
     scores = []
@@ -32,4 +32,4 @@ def score_analytics() -> None:
 
 
 if __name__ == "__main__":
-    score_analytics()
+    main()
