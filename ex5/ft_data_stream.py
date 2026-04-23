@@ -22,6 +22,7 @@ def consume_event(event_list: list) -> typing.Generator:
 
 
 def main() -> None:
+    print("=== Game Data Stream Processor ===")
     event_gen = gen_event()
     for i in range(1000):
         event = next(event_gen)
@@ -37,5 +38,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Game Data Stream Processor ===")
     main()
