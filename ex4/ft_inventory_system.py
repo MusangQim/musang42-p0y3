@@ -20,6 +20,12 @@ def main() -> None:
         except ValueError as e:
             print(f"Quantity error for '{input_user[0]}': {e}")
     # --- using dict.keys() ---
+    if len(sys.argv) == 1:
+        print("No argument added!")
+        return
+    if not inventory:
+        print("No valid item!!")
+        return
     check_keys = inventory.keys()
     print(f"Got inventory: {inventory}")
     print(f"Item list: {list(check_keys)}")
